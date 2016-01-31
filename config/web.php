@@ -45,10 +45,21 @@ $config = [
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
-    $config['modules']['debug'] = 'yii\debug\Module';
-
+    //$config['modules']['debug'] = 'yii\debug\Module';
     $config['bootstrap'][] = 'gii';
-    $config['modules']['gii'] = 'yii\gii\Module';
+    //$config['modules']['gii'] = 'yii\gii\Module';
+
+    //配置多个ip
+    $config['modules']['debug'] = [
+        'class' => 'yii\debug\Module',
+        'allowedIPs' => ['127.0.0.1', '::1','10.1.192.258'],
+    ];
+    $config['modules']['gii'] = [
+        'class' => 'yii\gii\Module',
+        'allowedIPs' => ['127.0.0.1', '::1','10.1.192.258'],
+    ];
+
+
 }
 
 return $config;
