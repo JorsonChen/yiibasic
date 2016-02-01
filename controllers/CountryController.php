@@ -14,6 +14,9 @@ use yii\filters\VerbFilter;
  */
 class CountryController extends Controller
 {
+    //设置默认方法
+    public $defaultAction = 'index';
+
     public function behaviors()
     {
         return [
