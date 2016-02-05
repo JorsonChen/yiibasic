@@ -8,6 +8,7 @@ use app\models\CountrySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\db\Query;
 
 /**
  * CountryController implements the CRUD actions for Country model.
@@ -27,6 +28,21 @@ class CountryController extends Controller
                 ],
             ],
         ];
+    }
+
+    public function actionTest()
+    {
+
+
+        $result = Country::find()
+            //->asArray() //获取数组结果
+            ->orderBy('population DESC') //排序
+            //->limit(5)
+            ->all(); //获取全部
+        //var_dump($result);exit();
+        return $this->render('test',[
+            'result'=>$result,
+        ]);
     }
 
     /**
