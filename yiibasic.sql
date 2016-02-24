@@ -10,10 +10,36 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2016-01-29 14:15:11
+Date: 2016-02-25 01:48:19
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- Table structure for `yii_country`
+-- ----------------------------
+DROP TABLE IF EXISTS `yii_country`;
+CREATE TABLE `yii_country` (
+  `code` char(2) NOT NULL,
+  `name` char(52) NOT NULL,
+  `population` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of yii_country
+-- ----------------------------
+INSERT INTO `yii_country` VALUES ('AU', 'Australia', '18886000');
+INSERT INTO `yii_country` VALUES ('BR', 'Brazil', '170115000');
+INSERT INTO `yii_country` VALUES ('CA', 'Canada', '1147000');
+INSERT INTO `yii_country` VALUES ('CN', 'China', '1277558000');
+INSERT INTO `yii_country` VALUES ('DE', 'Germany', '82164700');
+INSERT INTO `yii_country` VALUES ('FR', 'France', '59225700');
+INSERT INTO `yii_country` VALUES ('GB', 'United Kingdom', '59623400');
+INSERT INTO `yii_country` VALUES ('IN', 'India', '1013662000');
+INSERT INTO `yii_country` VALUES ('JP', 'Japan', '929113718');
+INSERT INTO `yii_country` VALUES ('RU', 'Russia', '146934000');
+INSERT INTO `yii_country` VALUES ('US', 'United States', '278357000');
+
 -- ----------------------------
 -- Table structure for `yii_follow`
 -- ----------------------------
